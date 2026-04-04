@@ -16,12 +16,13 @@ import org.springframework.context.annotation.Configuration;
                 description = "Backend APIs for managing financial records and role-based access control.",
                 contact = @Contact(name = "Mohith Kumar", email = "s.mohithkumar1511@gmail.com")
         ),
-        security = @SecurityRequirement(name = "basicAuth")
+        security = @SecurityRequirement(name = "bearerAuth")
 )
 @SecurityScheme(
-        name = "basicAuth",
+        name = "bearerAuth",
         type = SecuritySchemeType.HTTP,
-        scheme = "basic"
+        scheme = "bearer",
+        bearerFormat = "JWT"
 )
 public class OpenApiConfig {
     // Configuration is handled entirely by the annotations!
